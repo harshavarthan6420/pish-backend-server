@@ -4,10 +4,12 @@ const mongoose = require("mongoose");
 const PlaceModel = require("./models/Places");
 const cors = require("cors");
 
-app.use(express.json());
-app.use(
-  cors()
-);
+app.use(express.json());const corsOptions = {
+  origin: ['http://localhost:3000', 'https://pish.onrender.com'], 
+  credentials: true, 
+};
+
+app.use(cors(corsOptions));
 
 mongoose.connect(
   "mongodb+srv://pish-admin:admin@pish.kt4ch8v.mongodb.net/pish?retryWrites=true&w=majority&appName=Pish"
