@@ -6,10 +6,7 @@ const {test,registerPlace,}=require('../controllers/authControllers')
 
 // middleware 
 router.use(
-    cors({
-    credentials: true,
-    origin: 'http://localhost:3000'
-    })
+    cors()
 )
 router.get('/',test)
 router.post('/add-places',registerPlace)
